@@ -28,7 +28,7 @@ const Dashboard: React.FC = () => (
     </Typography>
     <Grid container spacing={3}>
       {stats.map((s) => (
-        <Grid item xs={12} sm={6} md={4} key={s.label}>
+        <Grid size={{ xs: 12, sm: 6, md: 4 }} key={s.label}>
           <Card sx={{ '&:hover': { transform: 'translateY(-2px)', transition: '0.2s' } }}>
             <CardContent>
               <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>

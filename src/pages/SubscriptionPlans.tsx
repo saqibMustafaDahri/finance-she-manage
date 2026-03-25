@@ -55,7 +55,7 @@ const SubscriptionPlans: React.FC = () => {
 
       <Grid container spacing={3}>
         {plans.map((plan) => (
-          <Grid item xs={12} sm={6} md={4} key={plan.id}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }} key={plan.id}>
             <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', position: 'relative', overflow: 'visible' }}>
               {plan.name === 'Premium' && (
                 <Chip label="Popular" size="small" sx={{ position: 'absolute', top: -10, right: 16, bgcolor: '#590432', color: '#fff' }} />

@@ -78,7 +78,7 @@ const DeepfakeVideos: React.FC = () => {
 
       <Grid container spacing={3}>
         {videos.map((video) => (
-          <Grid item xs={12} sm={6} md={4} key={video.id}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }} key={video.id}>
             <Card>
               <CardMedia component="img" height="160" image={video.thumbnail} alt={video.title} sx={{ objectFit: 'cover' }} />
               <CardContent sx={{ pb: 0 }}>
