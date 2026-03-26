@@ -37,24 +37,24 @@ const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, onClose }) => {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const drawerContent = (
-    <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+    <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column', background: 'linear-gradient(180deg, rgba(89, 4, 50, 0) 0%, #470328 100%)', bgcolor: '#590432' }}>
       <Toolbar sx={{ px: 3 }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
           <Box sx={{
             width: 36, height: 36, borderRadius: '10px',
-            bgcolor: '#980755',
+            bgcolor: 'rgba(255,255,255,0.2)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             color: '#fff', fontWeight: 700, fontSize: 16,
           }}>
             H
           </Box>
           <Box>
-            <Typography variant="subtitle2" fontWeight={700} lineHeight={1.2}>Her Financial</Typography>
-            <Typography variant="caption" color="text.secondary" lineHeight={1}>Journey CMS</Typography>
+            <Typography variant="subtitle2" fontWeight={700} lineHeight={1.2} color="#fff">Her Financial</Typography>
+            <Typography variant="caption" lineHeight={1} sx={{ color: 'rgba(255,255,255,0.7)' }}>Journey CMS</Typography>
           </Box>
         </Box>
       </Toolbar>
-      <Divider />
+      <Divider sx={{ borderColor: 'rgba(255,255,255,0.15)' }} />
       <List sx={{ px: 1.5, py: 1, flex: 1 }}>
         {navItems.map((item) => {
           const isActive = location.pathname === item.path;
@@ -64,33 +64,33 @@ const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, onClose }) => {
               onClick={() => { navigate(item.path); if (isMobile) onClose(); }}
               sx={{
                 borderRadius: '8px', mb: 0.5,
-                bgcolor: isActive ? 'rgba(152,7,85,0.08)' : 'transparent',
-                color: isActive ? '#980755' : 'text.secondary',
-                '&:hover': { bgcolor: 'rgba(152,7,85,0.05)' },
+                bgcolor: isActive ? 'rgba(255,255,255,0.15)' : 'transparent',
+                color: '#fff',
+                '&:hover': { bgcolor: 'rgba(255,255,255,0.1)' },
               }}
             >
-              <ListItemIcon sx={{ color: isActive ? '#980755' : 'text.secondary', minWidth: 40 }}>
+              <ListItemIcon sx={{ color: '#fff', minWidth: 40 }}>
                 {item.icon}
               </ListItemIcon>
-              <ListItemText primary={item.label} primaryTypographyProps={{ fontSize: 14, fontWeight: isActive ? 600 : 400 }} />
+              <ListItemText primary={item.label} primaryTypographyProps={{ fontSize: 14, fontWeight: isActive ? 600 : 400, color: '#fff' }} />
             </ListItemButton>
           );
         })}
       </List>
-      <Divider />
+      <Divider sx={{ borderColor: 'rgba(255,255,255,0.15)' }} />
       <List sx={{ px: 1.5, py: 1 }}>
         <ListItemButton
           onClick={() => { navigate('/login'); }}
           sx={{
             borderRadius: '8px',
-            color: 'text.secondary',
-            '&:hover': { bgcolor: 'rgba(152,7,85,0.05)', color: '#980755' },
+            color: '#fff',
+            '&:hover': { bgcolor: 'rgba(255,255,255,0.1)' },
           }}
         >
-          <ListItemIcon sx={{ color: 'inherit', minWidth: 40 }}>
+          <ListItemIcon sx={{ color: '#fff', minWidth: 40 }}>
             <LogoutIcon />
           </ListItemIcon>
-          <ListItemText primary="Logout" primaryTypographyProps={{ fontSize: 14, fontWeight: 400 }} />
+          <ListItemText primary="Logout" primaryTypographyProps={{ fontSize: 14, fontWeight: 400, color: '#fff' }} />
         </ListItemButton>
       </List>
     </Box>
