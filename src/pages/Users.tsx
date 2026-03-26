@@ -54,10 +54,7 @@ const Users: React.FC = () => {
 
   return (
     <Box>
-      <Typography variant="h4" gutterBottom sx={{
-        background: 'linear-gradient(135deg, #590432, #470328)',
-        WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-      }}>User Management</Typography>
+      <Typography variant="h4" gutterBottom sx={{ color: '#980755' }}>User Management</Typography>
 
       <Box sx={{ display: 'flex', gap: 2, mb: 3, flexWrap: 'wrap' }}>
         <TextField size="small" placeholder="Search users..." value={search} onChange={(e) => setSearch(e.target.value)}

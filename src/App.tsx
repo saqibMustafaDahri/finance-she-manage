@@ -8,6 +8,7 @@ import TutorialVideos from "./pages/TutorialVideos";
 import SubscriptionPlans from "./pages/SubscriptionPlans";
 import OnboardingQuestions from "./pages/OnboardingQuestions";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
@@ -15,6 +16,7 @@ const App = () => (
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route element={<AdminLayout />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/users" element={<Users />} />

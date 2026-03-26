@@ -17,10 +17,7 @@ const stats = [
 
 const Dashboard: React.FC = () => (
   <Box>
-    <Typography variant="h4" gutterBottom sx={{
-      background: 'linear-gradient(135deg, #590432, #470328)',
-      WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-    }}>
+    <Typography variant="h4" gutterBottom sx={{ color: '#980755' }}>
       Dashboard
     </Typography>
     <Typography variant="body2" color="text.secondary" mb={3}>
@@ -39,8 +36,8 @@ const Dashboard: React.FC = () => (
                 </Box>
                 <Box sx={{
                   p: 1.2, borderRadius: '12px',
-                  background: 'linear-gradient(135deg, rgba(89,4,50,0.1), rgba(71,3,40,0.1))',
-                  color: '#590432',
+                  bgcolor: 'rgba(152,7,85,0.1)',
+                  color: '#980755',
                 }}>
                   {s.icon}
                 </Box>

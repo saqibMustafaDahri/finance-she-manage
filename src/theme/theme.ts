@@ -5,13 +5,13 @@ export const getTheme = (mode: 'light' | 'dark') =>
     palette: {
       mode,
       primary: {
-        main: '#590432',
-        dark: '#470328',
-        light: '#7a1a55',
+        main: '#980755',
+        dark: '#7a0544',
+        light: '#b81a6e',
         contrastText: '#fff',
       },
       secondary: {
-        main: '#470328',
+        main: '#980755',
         contrastText: '#fff',
       },
       background: {
@@ -38,9 +38,9 @@ export const getTheme = (mode: 'light' | 'dark') =>
       MuiButton: {
         styleOverrides: {
           containedPrimary: {
-            background: 'linear-gradient(135deg, #590432 0%, #470328 100%)',
+            backgroundColor: '#980755',
             '&:hover': {
-              background: 'linear-gradient(135deg, #6b0a42 0%, #590432 100%)',
+              backgroundColor: '#7a0544',
             },
           },
         },

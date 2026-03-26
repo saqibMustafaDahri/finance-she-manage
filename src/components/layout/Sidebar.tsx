@@ -11,6 +11,7 @@ import {
   School as SchoolIcon,
   CardMembership as CardIcon,
   Quiz as QuizIcon,
+  Logout as LogoutIcon,
 } from '@mui/icons-material';
 
 const DRAWER_WIDTH = 260;
@@ -41,7 +42,7 @@ const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, onClose }) => {
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
           <Box sx={{
             width: 36, height: 36, borderRadius: '10px',
-            background: 'linear-gradient(135deg, #590432, #470328)',
+            bgcolor: '#980755',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             color: '#fff', fontWeight: 700, fontSize: 16,
           }}>
@@ -63,18 +64,34 @@ const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, onClose }) => {
               onClick={() => { navigate(item.path); if (isMobile) onClose(); }}
               sx={{
                 borderRadius: '8px', mb: 0.5,
-                bgcolor: isActive ? 'rgba(89,4,50,0.08)' : 'transparent',
-                color: isActive ? '#590432' : 'text.secondary',
-                '&:hover': { bgcolor: 'rgba(89,4,50,0.05)' },
+                bgcolor: isActive ? 'rgba(152,7,85,0.08)' : 'transparent',
+                color: isActive ? '#980755' : 'text.secondary',
+                '&:hover': { bgcolor: 'rgba(152,7,85,0.05)' },
               }}
             >
-              <ListItemIcon sx={{ color: isActive ? '#590432' : 'text.secondary', minWidth: 40 }}>
+              <ListItemIcon sx={{ color: isActive ? '#980755' : 'text.secondary', minWidth: 40 }}>
                 {item.icon}
               </ListItemIcon>
               <ListItemText primary={item.label} primaryTypographyProps={{ fontSize: 14, fontWeight: isActive ? 600 : 400 }} />
             </ListItemButton>
           );
         })}
+      </List>
+      <Divider />
+      <List sx={{ px: 1.5, py: 1 }}>
+        <ListItemButton
+          onClick={() => { navigate('/login'); }}
+          sx={{
+            borderRadius: '8px',
+            color: 'text.secondary',
+            '&:hover': { bgcolor: 'rgba(152,7,85,0.05)', color: '#980755' },
+          }}
+        >
+          <ListItemIcon sx={{ color: 'inherit', minWidth: 40 }}>
+            <LogoutIcon />
+          </ListItemIcon>
+          <ListItemText primary="Logout" primaryTypographyProps={{ fontSize: 14, fontWeight: 400 }} />
+        </ListItemButton>
       </List>
     </Box>
   );

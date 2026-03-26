@@ -26,9 +26,7 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuToggle }) => {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" noWrap sx={{
-          flexGrow: 1, fontWeight: 700,
-          background: 'linear-gradient(135deg, #590432, #470328)',
-          WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+          flexGrow: 1, fontWeight: 700, color: '#980755',
         }}>
           Admin Dashboard
         </Typography>
@@ -39,7 +37,7 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuToggle }) => {
             </IconButton>
           </Tooltip>
           <IconButton><NotificationsIcon /></IconButton>
-          <Avatar sx={{ width: 34, height: 34, bgcolor: '#590432', fontSize: 14 }}>A</Avatar>
+          <Avatar sx={{ width: 34, height: 34, bgcolor: '#980755', fontSize: 14 }}>A</Avatar>
         </Box>
       </Toolbar>
     </AppBar>
