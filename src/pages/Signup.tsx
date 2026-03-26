@@ -3,14 +3,14 @@ import { useNavigate, Link } from 'react-router-dom';
 import {
   Box, Card, CardContent, TextField, Button, Typography, InputAdornment, IconButton,
 } from '@mui/material';
-import { Visibility, VisibilityOff, Email, Lock } from '@mui/icons-material';
+import { Visibility, VisibilityOff, Email, Lock, Person } from '@mui/icons-material';
 
-const Login: React.FC = () => {
+const Signup: React.FC = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
-  const [form, setForm] = useState({ email: '', password: '' });
+  const [form, setForm] = useState({ name: '', email: '', password: '' });
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleSignup = (e: React.FormEvent) => {
     e.preventDefault();
     navigate('/');
   };
@@ -27,9 +27,12 @@ const Login: React.FC = () => {
               color: '#fff', fontWeight: 800, fontSize: 24,
             }}>H</Box>
             <Typography variant="h5" fontWeight={700} sx={{ color: '#980755' }}>Her Financial Journey</Typography>
-            <Typography variant="body2" color="text.secondary" mt={0.5}>Admin Dashboard Login</Typography>
+            <Typography variant="body2" color="text.secondary" mt={0.5}>Create your Admin account</Typography>
           </Box>
-          <form onSubmit={handleLogin}>
+          <form onSubmit={handleSignup}>
+            <TextField fullWidth label="Full Name" value={form.name}
+              onChange={(e) => setForm({ ...form, name: e.target.value })} sx={{ mb: 2 }}
+              InputProps={{ startAdornment: <InputAdornment position="start"><Person /></InputAdornment> }} />
             <TextField fullWidth label="Email" type="email" value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })} sx={{ mb: 2 }}
               InputProps={{ startAdornment: <InputAdornment position="start"><Email /></InputAdornment> }} />
@@ -41,12 +44,12 @@ const Login: React.FC = () => {
                   <IconButton onClick={() => setShowPassword(!showPassword)} edge="end">{showPassword ? <VisibilityOff /> : <Visibility />}</IconButton>
                 </InputAdornment>,
               }} />
-            <Button fullWidth type="submit" variant="contained" size="large" sx={{ py: 1.5 }}>Sign In</Button>
+            <Button fullWidth type="submit" variant="contained" size="large" sx={{ py: 1.5 }}>Sign Up</Button>
           </form>
           <Typography variant="body2" textAlign="center" mt={2} color="text.secondary">
-            Don't have an account?{' '}
-            <Typography component={Link} to="/signup" variant="body2" sx={{ color: '#980755', fontWeight: 600, textDecoration: 'none' }}>
-              Sign Up
+            Already have an account?{' '}
+            <Typography component={Link} to="/login" variant="body2" sx={{ color: '#980755', fontWeight: 600, textDecoration: 'none' }}>
+              Sign In
             </Typography>
           </Typography>
         </CardContent>
@@ -55,4 +58,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default Signup;

@@ -11,6 +11,7 @@ import {
   School as SchoolIcon,
   CardMembership as CardIcon,
   Quiz as QuizIcon,
+  Logout as LogoutIcon,
 } from '@mui/icons-material';
 
 const DRAWER_WIDTH = 260;
@@ -75,6 +76,22 @@ const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, onClose }) => {
             </ListItemButton>
           );
         })}
+      </List>
+      <Divider />
+      <List sx={{ px: 1.5, py: 1 }}>
+        <ListItemButton
+          onClick={() => { navigate('/login'); }}
+          sx={{
+            borderRadius: '8px',
+            color: 'text.secondary',
+            '&:hover': { bgcolor: 'rgba(152,7,85,0.05)', color: '#980755' },
+          }}
+        >
+          <ListItemIcon sx={{ color: 'inherit', minWidth: 40 }}>
+            <LogoutIcon />
+          </ListItemIcon>
+          <ListItemText primary="Logout" primaryTypographyProps={{ fontSize: 14, fontWeight: 400 }} />
+        </ListItemButton>
       </List>
     </Box>
   );
