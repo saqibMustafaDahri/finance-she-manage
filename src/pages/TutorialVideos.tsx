@@ -46,13 +46,13 @@ const TutorialVideos: React.FC = () => {
   return (
     <Box>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2, flexWrap: 'wrap', gap: 2 }}>
-        <Typography variant="h4" sx={{ background: 'linear-gradient(135deg, #590432, #470328)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+        <Typography variant="h4" sx={{ color: '#980755' }}>
           Tutorial Videos
         </Typography>
         <Button variant="contained" startIcon={<Add />} onClick={openAdd}>Add Video</Button>
       </Box>
 
-      <Tabs value={tab} onChange={(_, v) => setTab(v)} sx={{ mb: 3, '& .Mui-selected': { color: '#590432' }, '& .MuiTabs-indicator': { bgcolor: '#590432' } }}>
+      <Tabs value={tab} onChange={(_, v) => setTab(v)} sx={{ mb: 3, '& .Mui-selected': { color: '#980755' }, '& .MuiTabs-indicator': { bgcolor: '#980755' } }}>
         <Tab label="All" /><Tab label="Free" /><Tab label="Premium" />
       </Tabs>
 

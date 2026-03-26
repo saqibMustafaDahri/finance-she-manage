@@ -60,7 +60,7 @@ const OnboardingQuestions: React.FC = () => {
   return (
     <Box>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3, flexWrap: 'wrap', gap: 2 }}>
-        <Typography variant="h4" sx={{ background: 'linear-gradient(135deg, #590432, #470328)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+        <Typography variant="h4" sx={{ color: '#980755' }}>
           Onboarding Questions
         </Typography>
         <Button variant="contained" startIcon={<Add />} onClick={openAdd}>Add Question</Button>
@@ -68,7 +68,7 @@ const OnboardingQuestions: React.FC = () => {
 
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
         {sorted.map((q, idx) => (
-          <Paper key={q.id} variant="outlined" sx={{ p: 2, display: 'flex', alignItems: 'center', gap: 2, '&:hover': { borderColor: '#590432' }, transition: '0.2s' }}>
+          <Paper key={q.id} variant="outlined" sx={{ p: 2, display: 'flex', alignItems: 'center', gap: 2, '&:hover': { borderColor: '#980755' }, transition: '0.2s' }}>
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
               <IconButton size="small" disabled={idx === 0} onClick={() => moveQuestion(idx, 'up')}><ArrowUpward fontSize="small" /></IconButton>
               <IconButton size="small" disabled={idx === sorted.length - 1} onClick={() => moveQuestion(idx, 'down')}><ArrowDownward fontSize="small" /></IconButton>

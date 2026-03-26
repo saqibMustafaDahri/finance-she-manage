@@ -47,7 +47,7 @@ const SubscriptionPlans: React.FC = () => {
   return (
     <Box>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3, flexWrap: 'wrap', gap: 2 }}>
-        <Typography variant="h4" sx={{ background: 'linear-gradient(135deg, #590432, #470328)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+        <Typography variant="h4" sx={{ color: '#980755' }}>
           Subscription Plans
         </Typography>
         <Button variant="contained" startIcon={<Add />} onClick={openAdd}>Add Plan</Button>
@@ -58,12 +58,12 @@ const SubscriptionPlans: React.FC = () => {
           <Grid size={{ xs: 12, sm: 6, md: 4 }} key={plan.id}>
             <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', position: 'relative', overflow: 'visible' }}>
               {plan.name === 'Premium' && (
-                <Chip label="Popular" size="small" sx={{ position: 'absolute', top: -10, right: 16, bgcolor: '#590432', color: '#fff' }} />
+                <Chip label="Popular" size="small" sx={{ position: 'absolute', top: -10, right: 16, bgcolor: '#980755', color: '#fff' }} />
               )}
               <CardContent sx={{ flex: 1 }}>
                 <Typography variant="h6" fontWeight={700}>{plan.name}</Typography>
                 <Box sx={{ display: 'flex', alignItems: 'baseline', mt: 1, mb: 1 }}>
-                  <Typography variant="h3" fontWeight={800} sx={{ background: 'linear-gradient(135deg, #590432, #470328)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                  <Typography variant="h3" fontWeight={800} sx={{ color: '#980755' }}>
                     ${plan.price}
                   </Typography>
                   <Typography variant="body2" color="text.secondary" ml={0.5}>/{plan.duration === 'monthly' ? 'mo' : 'yr'}</Typography>
@@ -71,7 +71,7 @@ const SubscriptionPlans: React.FC = () => {
                 <List dense>
                   {plan.features.map((f, i) => (
                     <ListItem key={i} disableGutters sx={{ py: 0.25 }}>
-                      <ListItemIcon sx={{ minWidth: 28 }}><CheckCircle fontSize="small" sx={{ color: '#590432' }} /></ListItemIcon>
+                      <ListItemIcon sx={{ minWidth: 28 }}><CheckCircle fontSize="small" sx={{ color: '#980755' }} /></ListItemIcon>
                       <ListItemText primary={f} primaryTypographyProps={{ variant: 'body2' }} />
                     </ListItem>
                   ))}

@@ -22,14 +22,11 @@ const Login: React.FC = () => {
           <Box sx={{ textAlign: 'center', mb: 3 }}>
             <Box sx={{
               width: 56, height: 56, borderRadius: '16px', mx: 'auto', mb: 2,
-              background: 'linear-gradient(135deg, #590432, #470328)',
+              bgcolor: '#980755',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               color: '#fff', fontWeight: 800, fontSize: 24,
             }}>H</Box>
-            <Typography variant="h5" fontWeight={700} sx={{
-              background: 'linear-gradient(135deg, #590432, #470328)',
-              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-            }}>Her Financial Journey</Typography>
+            <Typography variant="h5" fontWeight={700} sx={{ color: '#980755' }}>Her Financial Journey</Typography>
             <Typography variant="body2" color="text.secondary" mt={0.5}>Admin Dashboard Login</Typography>
           </Box>
           <form onSubmit={handleLogin}>

@@ -42,10 +42,7 @@ const DeepfakeVideos: React.FC = () => {
 
   return (
     <Box>
-      <Typography variant="h4" gutterBottom sx={{
-        background: 'linear-gradient(135deg, #590432, #470328)',
-        WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-      }}>Deepfake Videos</Typography>
+      <Typography variant="h4" gutterBottom sx={{ color: '#980755' }}>Deepfake Videos</Typography>
 
       <Paper variant="outlined"
         onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
@@ -53,12 +50,12 @@ const DeepfakeVideos: React.FC = () => {
         onDrop={handleDrop}
         sx={{
           p: 4, mb: 3, textAlign: 'center', cursor: 'pointer',
-          border: '2px dashed', borderColor: dragOver ? '#590432' : 'divider',
-          bgcolor: dragOver ? 'rgba(89,4,50,0.04)' : 'transparent',
+          border: '2px dashed', borderColor: dragOver ? '#980755' : 'divider',
+          bgcolor: dragOver ? 'rgba(152,7,85,0.04)' : 'transparent',
           transition: '0.2s',
         }}
         onClick={() => document.getElementById('video-upload')?.click()}>
-        <CloudUpload sx={{ fontSize: 48, color: '#590432', mb: 1 }} />
+        <CloudUpload sx={{ fontSize: 48, color: '#980755', mb: 1 }} />
         <Typography variant="body1" fontWeight={500}>Drag & drop video files here</Typography>
         <Typography variant="body2" color="text.secondary">or click to browse</Typography>
         <input id="video-upload" type="file" accept="video/*" hidden
