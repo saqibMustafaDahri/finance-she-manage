@@ -101,11 +101,11 @@ const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, onClose }) => {
       {isMobile ? (
         <Drawer variant="temporary" open={mobileOpen} onClose={onClose}
           ModalProps={{ keepMounted: true }}
-          sx={{ '& .MuiDrawer-paper': { width: DRAWER_WIDTH } }}>
+          sx={{ '& .MuiDrawer-paper': { width: DRAWER_WIDTH, background: '#590432', border: 'none' } }}>
           {drawerContent}
         </Drawer>
       ) : (
-        <Drawer variant="permanent" sx={{ '& .MuiDrawer-paper': { width: DRAWER_WIDTH, boxSizing: 'border-box' } }} open>
+        <Drawer variant="permanent" sx={{ '& .MuiDrawer-paper': { width: DRAWER_WIDTH, boxSizing: 'border-box', background: '#590432', border: 'none' } }} open>
           {drawerContent}
         </Drawer>
       )}
